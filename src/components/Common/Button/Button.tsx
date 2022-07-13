@@ -29,7 +29,7 @@ const StyledButton = styled.button`
   border-radius: 0.25rem;
   line-height: 1;
   font-weight: 600;
-  // margin: ${(props) => props.margin}px;
+
   ${variant({
     variants: styleVariants,
   })};

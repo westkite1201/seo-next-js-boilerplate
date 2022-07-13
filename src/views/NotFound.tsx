@@ -19,7 +19,7 @@ const NotFound = () => {
         <Heading scale="xxl">404</Heading>
         <Text mb="16px">{'Oops, page not found.'}</Text>
         <Link href="/" passHref>
-          <Button as="a" scale="sm">
+          <Button as="button" scale="sm">
             {'Back Home'}
           </Button>
         </Link>
