@@ -34,6 +34,8 @@ class MyDocument extends Document {
       <Html translate="no">
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&amp;display=swap" rel="stylesheet" />
+          <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css" />
+          <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=korean" rel="stylesheet" />
           <link rel="shortcut icon" href="/favicon-.ico" />
           <link rel="apple-touch-icon" href="/logo.png" />
           <link rel="manifest" href="/manifest.json" />

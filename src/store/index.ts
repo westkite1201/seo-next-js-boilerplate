@@ -15,51 +15,25 @@ import {
 import storage from 'redux-persist/lib/storage'
 import naviReducer from 'store/navi/reducer'
 import common from 'store/common'
-
+import auth from 'store/auth'
 // import limitOrders from './limitOrders/reducer'
 
 const PERSISTED_KEYS: string[] = ['navi']
 
-const migrations = {
-  0: (state) => {
-    // migration add userPredictionChainlinkChartDisclaimerShow
-    return {
-      ...state,
-      user: {
-        ...state?.user,
-        userPredictionChainlinkChartDisclaimerShow: true,
-      },
-    }
-  },
-  1: (state) => {
-    return {
-      ...state,
-    }
-  },
-}
-
 const persistConfig = {
   key: 'primary',
   whitelist: PERSISTED_KEYS,
-  blacklist: [''],
+  blacklist: ['auth'],
   storage,
   version: 1,
-  migrate: createMigrate(migrations, { debug: false }),
 }
-
-// const ListsConfig = {
-//   key: 'lists',
-//   version: 1,
-//   serialize: false,
-//   deserialize: false,
-//   storage: IndexedDBStorage('lists'),
-// }
 
 const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
     navi: naviReducer,
     common,
+    auth,
   }),
 )
 
@@ -117,9 +91,7 @@ export const useAppDispatch = () => useDispatch<AppDispatch>()
 
 export default store
 
-export const persistor = persistStore(store, undefined, () => {
-  //store.dispatch(updateVersion())
-})
+export const persistor = persistStore(store)
 
 export function useStore(initialState) {
   return useMemo(() => initializeStore(initialState), [initialState])

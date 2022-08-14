@@ -27,5 +27,9 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   scale?: Scale
   variant?: Variant
   disabled?: boolean
+  width?: string
 }
-export type ButtonProps<P extends ElementType = 'button'> = PolymorphicComponentProps<P, BaseButtonProps>
+export type ButtonProps<P extends ElementType = 'button'> = PolymorphicComponentProps<
+  P,
+  BaseButtonProps
+>

@@ -31,13 +31,22 @@ const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
       return '40px'
   }
 }
+const InputContainer = styled.div`
+  .label {
+    span {
+      font-size: 14px;
+      color grey;
+      display: block;
+    }
+  }
+`
 
 const Input = styled.input<InputProps>`
   background-color: ${({ theme }) => theme.colors.input};
   border: 0;
   border-radius: 4px;
   box-shadow: ${getBoxShadow};
-  color: ${({ theme }) => theme.colors.text};
+  color: black;
   display: block;
   font-size: 16px;
   height: ${getHeight};
@@ -62,10 +71,24 @@ const Input = styled.input<InputProps>`
   }
 `
 
+const InputWrapper = ({ label, form, ...props }: InputProps) => {
+  return (
+    <InputContainer>
+      {label && (
+        <label className="label">
+          <span>{label}</span>
+          <Input {...props} />
+        </label>
+      )}
+      {!label && <Input {...form} {...props} />}
+    </InputContainer>
+  )
+}
+
 Input.defaultProps = {
   scale: scales.MD,
   isSuccess: false,
   isWarning: false,
 }
-
-export default Input
+export default InputWrapper
+// export default InputWrapper

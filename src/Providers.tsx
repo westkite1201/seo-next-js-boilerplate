@@ -1,5 +1,5 @@
 import { light, dark } from 'theme'
-// import ModalProvider from 'components/widgets/Modal/ModalContext'
+import ModalProvider from 'components/Common/Modal/ModalContext'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { ToastsProvider } from 'contexts/ToastsContext'
@@ -17,8 +17,7 @@ const Providers: React.FC<{ children: any; store: Store }> = ({ children, store 
       <ToastsProvider>
         <NextThemeProvider>
           <StyledThemeProvider>
-            {children}
-            {/* <ModalProvider>{children}</ModalProvider> */}
+            <ModalProvider>{children}</ModalProvider>
           </StyledThemeProvider>
         </NextThemeProvider>
       </ToastsProvider>

@@ -7,14 +7,14 @@ import { withThemesProvider } from 'themeprovider-storybook'
 import light from '../src/theme/light'
 import dark from '../src/theme/dark'
 import ResetCSS from '../src/style/ResetCSS'
-// import { ModalProvider } from '../src/components/widgets/Modal'
+import ModalProvider from '../src/components/Common/Modal/ModalContext'
 
 export const globalDecorator = (Story) => (
   // <ModalProvider>
-  <>
+  <ModalProvider>
     <ResetCSS />
     <Story />
-  </>
+  </ModalProvider>
   // </ModalProvider>
 )
 

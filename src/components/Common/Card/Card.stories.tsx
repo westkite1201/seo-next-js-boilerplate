@@ -7,7 +7,7 @@ import UIKitCardHeader from './CardHeader'
 import CardBody from './CardBody'
 import CardFooter from './CardFooter'
 import Card from './Card'
-import Image from '../Image/Image'
+import Image from '../Image/NextImage'
 
 const Row = styled.div`
   margin-bottom: 32px;

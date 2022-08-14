@@ -13,6 +13,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 import Providers from '../Providers'
 import GlobalStyle from '../style/Global'
 import useBaseQueryClient from 'hooks/queries/useBaseQueryClient'
+import Menu from 'components/Menu'
 
 function GlobalHooks() {
   return null
@@ -36,7 +37,15 @@ function MyApp(props: AppProps) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="" />
         <title>TEST</title>
-        <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css" />
+        <script
+          type="text/javascript"
+          src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
+          charSet="utf-8"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
@@ -84,6 +93,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const Layout = Component.Layout || Fragment
   return (
     <>
+      <Menu />
       <Layout>
         <Component {...pageProps} />
       </Layout>

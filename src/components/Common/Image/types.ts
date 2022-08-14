@@ -4,6 +4,7 @@ import { SpaceProps } from 'styled-system'
 export interface WrapperProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
   width: number
   height: number
+  isFill?: boolean
 }
 
 export interface ImageProps extends SpaceProps, ImgHTMLAttributes<HTMLImageElement> {
@@ -12,4 +13,5 @@ export interface ImageProps extends SpaceProps, ImgHTMLAttributes<HTMLImageEleme
   isUseBlur?: boolean
   width?: number
   height?: number
+  isFill?: boolean
 }

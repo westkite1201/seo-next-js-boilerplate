@@ -18,18 +18,18 @@ const Button = (props: ButtonProps) => {
 }
 
 const StyledButton = styled.button`
+  width: ${(props) => (props.width ? props.width : 'auto')}
   outline: none;
   border: none;
   box-sizing: border-box;
   height: 2rem;
   font-size: 0.875rem;
   padding: 0.5rem 1rem;
-  background: #20c997;
+  background: #fdb11a;
   color: white;
   border-radius: 0.25rem;
   line-height: 1;
   font-weight: 600;
-
   ${variant({
     variants: styleVariants,
   })};
@@ -37,10 +37,10 @@ const StyledButton = styled.button`
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
   }
   &:hover {
-    background: #38d9a9;
+    background: #e49600;
   }
   &:active {
-    background: #12b886;
+    background: #e49600;
   }
 `
 

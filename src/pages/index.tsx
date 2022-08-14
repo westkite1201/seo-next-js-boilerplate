@@ -1,7 +1,5 @@
-import { useNaviState } from 'store/navi/hooks'
-import { AppDispatch } from 'store'
-import { setPath } from 'store/navi/actions'
-import { useDispatch, useSelector } from 'react-redux'
+import Home from 'views/Home'
+// import { withAuthComponent, withAuthServerSideProps } from 'hoc/withAuthServerSide'
 
 declare global {
   interface Window {
@@ -10,9 +8,9 @@ declare global {
 }
 
 const IndexPage = ({ theme }) => {
-  const dispatch = useDispatch<AppDispatch>()
-
-  return <div></div>
+  return <Home />
 }
 
 export default IndexPage
+// export default withAuthComponent(IndexPage, false)
+// export const getServerSideProps = withAuthServerSideProps()
